@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "59590226-d6a1-46e8-a308-fee893745aa1",
+		"name": "Quiz(Crud-try)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Module",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Anoop Surendran\",\r\n    \"mobile\":\"8086299277\",\r\n    \"email\":\"magicanoop@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"role\":\"1\",\r\n    \"status\":\"true\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"magicanoop@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users(Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJcIjYxZmUxOWJhYWU2N2E4M2U2ZjRhNmYwYlwiIiwiZW1haWwiOiJtYWdpY2Fub29wQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY0NDA0Mjg4M30.ajU2PdlOfwL_5v8J28MW9NXuna4koF6RYhr5PuRpWM8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Mobile Number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJcIjYxZmUxOWJhYWU2N2E4M2U2ZjRhNmYwYlwiIiwiZW1haWwiOiJtYWdpY2Fub29wQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY0NDA0Mjg4M30.ajU2PdlOfwL_5v8J28MW9NXuna4koF6RYhr5PuRpWM8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"magicanoop@gmail.com\",\r\n    \"current_pass\":\"1234\",\r\n    \"mobile\":\"7907370599\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/updatemobile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updatemobile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJcIjYxZmUxOWJhYWU2N2E4M2U2ZjRhNmYwYlwiIiwiZW1haWwiOiJtYWdpY2Fub29wQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY0NDA0Mjg4M30.ajU2PdlOfwL_5v8J28MW9NXuna4koF6RYhr5PuRpWM8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"magicanoop@gmail.com\",\r\n    \"current_pass\":\"4321\",\r\n    \"new_pass\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/updatepassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"updatepassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category Module",
+			"item": [
+				{
+					"name": "Add Category (Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJcIjYxZmUxOWJhYWU2N2E4M2U2ZjRhNmYwYlwiIiwiZW1haWwiOiJtYWdpY2Fub29wQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY0NDA0Mjg4M30.ajU2PdlOfwL_5v8J28MW9NXuna4koF6RYhr5PuRpWM8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cat_name\":\"New Category\",\r\n    \"parent_id\":\"0\",\r\n    \"image_path\":\"123456.jpg\",\r\n    \"status\":\"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/addcategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category(Only admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJcIjYxZmUxOWJhYWU2N2E4M2U2ZjRhNmYwYlwiIiwiZW1haWwiOiJtYWdpY2Fub29wQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY0NDA0Mjg4M30.ajU2PdlOfwL_5v8J28MW9NXuna4koF6RYhr5PuRpWM8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cat_name\":\"New Category\",\r\n    \"parent_id\":\"0\",\r\n    \"status\":\"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/delete/61fbb7ac3b7b486737ce4a21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"delete",
+								"61fbb7ac3b7b486737ce4a21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cat_name\":\"New Category\",\r\n    \"parent_id\":\"0\",\r\n    \"status\":\"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/allcategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"allcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Base categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJcIjYxZmUxOWJhYWU2N2E4M2U2ZjRhNmYwYlwiIiwiZW1haWwiOiJtYWdpY2Fub29wQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY0NDA0Mjg4M30.ajU2PdlOfwL_5v8J28MW9NXuna4koF6RYhr5PuRpWM8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cat_name\":\"New Category\",\r\n    \"parent_id\":\"0\",\r\n    \"status\":\"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/all-base-categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"all-base-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sub-Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"parent_id\":\"61fb907f088913d6478a1d61\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/sub-category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"sub-category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz Module",
+			"item": [
+				{
+					"name": "Add Question(Only  Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJcIjYxZmUxOWJhYWU2N2E4M2U2ZjRhNmYwYlwiIiwiZW1haWwiOiJtYWdpY2Fub29wQGdtYWlsLmNvbSIsInJvbGUiOjEsImlhdCI6MTY0NDA0Mjg4M30.ajU2PdlOfwL_5v8J28MW9NXuna4koF6RYhr5PuRpWM8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\":\"620099f29d317bb37258658f\",\r\n    \"question\":\"What is not explicitly stated in the Constitution of India but followed as a convention? \",\r\n    \"option1\":\" The Finance Minister is to be a Member of the Lower House.\",\r\n    \"option2\":\"The Prime Minister has to resign if he loses the majority in the Lower House\",\r\n    \"option3\":\"All sections of India are to be represented in the Councils of Ministers\",\r\n    \"option4\":\"If both the President and the Vice-President demit office simultaneously before the end of the tenure, Speaker of the Lower House of the Parliament will officiate as the President\",\r\n    \"option5\":\"nil\",\r\n    \"answer\":2,\r\n    \"explanation\":\"NIl\",\r\n    \"status\":\"true\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/addquestion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addquestion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/allquestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"allquestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Questions under a category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/question/620099f29d317bb37258657f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"question",
+								"620099f29d317bb37258657f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "No of questions in a category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/noofquestions/620099f29d317bb37258658f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"noofquestions",
+								"620099f29d317bb37258658f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get answer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/answer/6200f420aa29e91a30bcc2ba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"answer",
+								"6200f420aa29e91a30bcc2ba"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
