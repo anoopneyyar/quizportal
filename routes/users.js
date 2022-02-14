@@ -3,7 +3,6 @@ const usermodel = require("../models/user");
 const bcrypt = require('bcrypt');
 const app = express();
 const Jwt= require('jsonwebtoken');
-const { users } = require("../../node2/app/models");
 const { json } = require("express");
 
 function auth (request,response,next){
